@@ -8,11 +8,13 @@
 
 .intro {
     padding-top: 200px;
-    padding-bottom: 36px;
+    padding-bottom: 17px;
+    font-size: 40px;
 }
 
 .para {
-    padding-top: 60px;
+    padding-top: 46px;
+    font-size: 20px;
 }
 
 .bt1 {
