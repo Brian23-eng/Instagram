@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profiles Comments, Images
+from .models import Profiles, Comments, Images
 
 class PostImagesForm(forms.ModelForm):
     image = forms.ImageField()
