@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Profile, Images, Comments
+from .models import Profiles, Images, Comments
 from django.contrib.auth.models import User
 import datetime as dt
 
@@ -21,5 +21,14 @@ class ProfileTestClass(TestCase):
         self.bio.save_bio()
         profile =Profiles.objects.all()
         self.assertTrue(len(profile) > 0)
+        
+    def test_delete_profile(self):
+        self.profile.save_profile()
+        self.profile.delete_profile()
+        profile = Profiles.objects.all()
+        self.assertTrue(len(profile) == 0)
+        
+    def tearDown(self):
+        Images.objects.all().delete()
 
 
