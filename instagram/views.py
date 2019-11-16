@@ -19,3 +19,18 @@ def profile(request, username):
     title = f'{user.username}\'s Profile '
     images = Images.get_profile_images(user.id)
     return render(request, 'profile/profile.html',{'title':title,'users':user,'profile':profile,'images':images})
+
+
+@login_required(login_url='/accounts/login/')
+def post_image(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostImageForm(request.POST,request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.profile = current_user
+            image.save()
+            return redirect('profile',username=request.user)
+    else:
+        form = PostImageForm()
+    return render(request,'profile/post_image.html',{'form':form})

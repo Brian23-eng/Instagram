@@ -9,6 +9,7 @@ urlpatterns=[
     
     url('^$', views.home, name='home'), 
     url(r'^user/(?P<username>\w+)',views.profile,name='profile'),
+    url(r'^postImage/',views.post_image,name='postImage'),
 ]
 
 
