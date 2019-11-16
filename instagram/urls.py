@@ -10,6 +10,9 @@ urlpatterns=[
     url('^$', views.home, name='home'), 
     url(r'^user/(?P<username>\w+)',views.profile,name='profile'),
     url(r'^postImage/',views.post_image,name='postImage'),
+    url(r'^user/account/edit/',views.edit_profile,name='editProfile'),
+    url(r'^image/(?P<image_id>\d+)',views.view_single_image,name='singleImage'),
+    url(r'^search/',views.search,name='search'),
 ]
 
 
