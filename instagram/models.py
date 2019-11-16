@@ -3,10 +3,13 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 
 
-class Profile(models.Model):
+class Profiles(models.Model):
     image = models.ImageField(blank=True)
     bio = models.CharField(max_length=100)
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    
+    def save_profile(self):
+        self.save()
     
     
     
