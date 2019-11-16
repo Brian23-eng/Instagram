@@ -38,6 +38,29 @@ class Images(models.Model):
     profile = models.ForeignKey(User,on_delete=models.CASCADE)
     
     
+    def save_image(self):
+        self.save()
+        
+    def delete_image(self):
+        self.delete()
+        
+    @classmethod  
+    def get_image_by_id(cls,id):
+        image = Images.objects.get(pk=id)
+        return image
+    
+    @classmethod
+    def get_profile_images(cls,profile):
+        images = Images.objects.filter(profile__pk= profile)
+        return images
+    
+    @classmethod
+    def get_all_images(cls):
+        images = Images.objects.all()
+        return images
+    
+    
+    
     
 class Comments(models.Model):
     comment = models.CharField(max_length=100)
