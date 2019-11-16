@@ -1,43 +1,53 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top cool">
-    <a class="navbar-brand " id="gal" href="">InstaClone</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link home" href="">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle location" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                  </a>
-                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdown">
+<head>
 
-                    <ul class="dropdown-item">
-                        <!-- <li href=""></li> -->
-                    </ul>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#E2E1DD;border-bottom:grey;height:15vh;">
+        <a class="navbar-brand" href="{% url 'home' %}" style=" font-size:25px; font-family: 'Special Elite', cursive;">Insta&#x1F4AF;</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                </div>
-            </li>
-        </ul>
-        <!-- Adding a search form  -->
-        <div class="col-sm-4 col-md-4 navbar-right">
-
-            <form class="form-inline my-2 my-lg-0" role="search" action="">
-
-                <div class="input-group futa">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search Category" aria-label="Search" name="image">
-                    <div class="input-group-btn">
-                        <button class="btn btn-outline my-2 my-sm-0" id="rat" type="submit">Search</button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" style="">
+                    <a class="nav-link home" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link post" href="{%url 'postImage'%}" style="color: black;">Post Image <i class="fa fa-picture-o" aria-hidden="true" ></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle account" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
+                Account
+              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'profile' username=user %}">@{{user|title}} <i class="fa fa-user"></i></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout" style="color: black;">Logout</a>
                     </div>
-
-                </div>
-
+                </li>
+            </ul>
+            {% else %}
+            <li>
+                <a class='btn btn-default' href="/accounts/login" style="color: black;">Login</a>
+            </li>
+            <li>
+                <a class='btn btn-default' href="/accounts/register" style="color: black;">Register</a>
+            </li>
+            {% endif %}
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
-        <!-- search form end -->
-    </div>
-</nav>
+    </nav>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -25,12 +25,12 @@ def profile(request, username):
 def post_image(request):
     current_user = request.user
     if request.method == 'POST':
-        form = PostImageForm(request.POST,request.FILES)
+        form = PostImagesForm(request.POST,request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
             image.profile = current_user
             image.save()
             return redirect('profile',username=request.user)
     else:
-        form = PostImageForm()
+        form = PostImagesForm()
     return render(request,'profile/post_image.html',{'form':form})
