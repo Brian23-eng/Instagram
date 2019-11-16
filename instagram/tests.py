@@ -72,6 +72,37 @@ class ImageTestClass(TestCase):
     def tearDown(self):
         Images.objects.all().delete()
         
+class CommentsTestClass(TestCase):
+
+
+    def setup (self):
+        self.user= User(username='hello',email='hello@gmail.com', password='hello123')
+        self.user.save()
+
+        self.profile=Profiles(images='/posts',bio='kenya love',user=self.user)
+        self.profile.save()
+
+        self.comment=Comments(comment='jeepers creepers',image=self.image, user=self.profile,posted=auto_now())
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.comment,Comments))
+
+    def test_save_method(self):
+        self.comment.save_comment()
+        comments =Comments.objects.all()
+        self.assertTrue(len(comments) > 0)
+
+    def test_delete_comments(self):
+        self.comments.save_comments()
+        self.comments.delete_comments()
+        comments = Comments.objects.all()
+        self.assertTrue(len(comments) == 0)
+
+    def tearDown(self):
+        Comments.objects.all().delete()
+
+
+        
         
 
 
