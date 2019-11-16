@@ -7,5 +7,6 @@ from . models import Images, Comments, Profiles
 # Create your views here.
 @login_required(login_url='/accounts/register/')
 def home(request):
-    return render(request,'home.html')
+    images = Images.get_all_images()
+    return render(request,'home.html',{'images':images})
 
