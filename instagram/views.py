@@ -67,7 +67,7 @@ def view_single_image(request,image_id):
             return redirect('singleImage',image_id=image_id)
     else:
         form = PostComment()
-    return render(request, 'image.html',{'image':image,'form':form,'comments':comments})
+    return render(request, 'photos.html',{'image':image,'form':form,'comments':comments})
 
 def search(request):
     if 'search' in request.GET and request.GET['search']:
