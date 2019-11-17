@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,6 +13,7 @@ urlpatterns=[
     url(r'^user/account/edit/',views.edit_profile,name='editProfile'),
     url(r'^image/(?P<image_id>\d+)',views.view_single_image,name='singleImage'),
     url(r'^search/',views.search,name='search'),
+    
 ]
 
 
