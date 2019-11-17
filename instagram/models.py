@@ -15,8 +15,8 @@ class Profiles(models.Model):
         self.delete()
         
     @classmethod
-    def get_profile_by_name(cls, name):
-        profile = Profiles.objects.filter(user__username__icontains = name)
+    def get_profile_by_name(cls, search_term):
+        profile = cls.objects.filter(user__username__icontains = search_term)
         return profile
     
     @classmethod
