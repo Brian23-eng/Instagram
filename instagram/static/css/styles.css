@@ -8,3 +8,59 @@
 #insta {
     color: white;
 }
+
+#home,
+#post,
+#account {
+    font-size: 12px;
+}
+
+.name {
+    color: black;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.copy {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.img {
+    box-shadow: 5px 5px 5px #424949;
+}
+
+.container-fluid {
+    background-color: #ECF0F1!important;
+}
+
+#insta {
+    font-size: 50px;
+}
+
+.clone {
+    font-family: 'Marvel', sans-serif;
+    font-style: italic;
+}
+
+.er {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.ery {
+    padding-top: 30px;
+    margin-left: 15px;
+}
+
+#erry {
+    margin-left: 15px;
+}
+
+.bot {
+    padding-bottom: 50px;
+}

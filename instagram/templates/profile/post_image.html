@@ -1,12 +1,16 @@
-{% extends 'base.html' %} {% load bootstrap3 %} {% block content %}
-<div class="container ">
+{% extends 'profile/base.html' %} {% load bootstrap3 %} {% block content %}
+<div class="container-fluid ">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 er">
             <form action="{% url 'postImage' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %} {% bootstrap_form form %}
-                <input type="submit" class="btn btn-secondary btn-lg" value="POST">
+                <input type="submit" class="btn btn-primary btn-lg" value="POST">
             </form>
         </div>
     </div>
+    <hr>
+    <footer>
+        <h4 class="text-center copy">&copy; branTech</h4>
+    </footer>
 </div>
 {{ form.media }} {% endblock %}

@@ -6,7 +6,7 @@ from . models import Images, Comments, Profiles
 from .forms import PostComment, PostImagesForm, PostProfile
 
 # Create your views here.
-@login_required(login_url='/accounts/register/')
+@login_required(login_url='/accounts//')
 def home(request):
     images = Images.get_all_images()
     return render(request,'home.html',{'images':images})
