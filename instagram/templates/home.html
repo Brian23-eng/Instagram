@@ -16,7 +16,8 @@
                         <p class="card-text"> Caption ~ {{image.caption|safe}} </p>
                         <ul class=" list-inline home-text">
                             <li class="list-inline-item">
-                                Like <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                                Like
+                                <a href="{% url 'singleImage' image_id=image.id %}"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></a>
                             </li>
                             <li class="list-inline-item">
                                 Comment <a href="{% url 'singleImage' image_id=image.id %}"><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i></a>
