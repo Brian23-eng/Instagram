@@ -1,5 +1,5 @@
 .login {
-    padding-top: 70px;
+    padding-top: 30px;
 }
 
 #home,
@@ -40,8 +40,7 @@
 }
 
 .clone {
-    font-family: 'Marvel', sans-serif;
-    font-style: italic;
+    font-family: 'Satisfy', cursive;
 }
 
 .er {
@@ -63,4 +62,10 @@
 
 .bot {
     padding-bottom: 50px;
+}
+
+.in {
+    padding-top: 25px;
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
 }
