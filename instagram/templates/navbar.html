@@ -42,8 +42,8 @@
                 <a class='btn btn-default' href="/accounts/register">Register</a>
             </li>
             {% endif %}
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="profiles">
+            <form class="form-inline my-2 my-lg-0" action="{%url 'search'%}">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>

@@ -73,10 +73,11 @@ def view_single_image(request,image_id):
 def search(request):
     if 'search' in request.GET and request.GET['search']:
         search_term = request.GET.get('search')
-        profiles = Profiles.get_profile_by_name(search_term)
+        profiles = Profiles.get_profile_by_name( search_term)
         message = f'{search_term}'
         
-        return render(request,'search.html',{'message':message,'profiles':profiles})
+        return render(request,'search.html',{'message':message,'profiles':profiles, 'search_term':search_term})
     else:
         message = 'Search Username'
         return render(request,'search.html',{'message':message})
+ 
