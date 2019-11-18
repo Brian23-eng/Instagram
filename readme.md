@@ -22,7 +22,7 @@ InstaClone allow users to upload photos,create an account, comment on photos.
 
 ## Live link
 
-<!-- https://gallery23.herokuapp.com/ -->
+https://instabran.herokuapp.com/
 
 ## Set-up and Installation
 
